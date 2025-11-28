@@ -12,7 +12,7 @@ const Contact = () => {
 
     // NOTE: You must sign up at emailjs.com to get these IDs
     // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', 'YOUR_PUBLIC_KEY'
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm('service_giv9d89', 'template_s2upnds', form.current, 'DaazGoaO9Q7s65oU1')
       .then((result) => {
           console.log(result.text);
           setStatus('success');
