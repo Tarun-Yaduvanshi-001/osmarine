@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, m } from 'framer-motion';
 import { Wrench, ShoppingCart, Settings, Anchor, Zap, Box, Droplet, PenTool, Ship, CheckCircle2 } from 'lucide-react';
 import servicesHeaderImg from '../assets/services_header_image.jpg';
+import marineStoresImg from '../assets/marine_stores.jpg';
+import technicalSparesImg from '../assets/technical_spares.jpg';
+import technicalServicesImg from '../assets/technical_services.jpg';
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('sales');
@@ -93,7 +96,7 @@ const Services = () => {
                 {/* Group Image */}
                 <div className="relative h-[300px] lg:h-[500px] rounded-2xl overflow-hidden group">
                     <img 
-                        src="https://images.unsplash.com/photo-1605218427306-635ba2439715?w=800&auto=format&fit=crop&q=80" 
+                        src={marineStoresImg} 
                         alt="Marine Stores" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -142,7 +145,7 @@ const Services = () => {
                 {/* Group Image */}
                 <div className="relative h-[300px] lg:h-[500px] rounded-2xl overflow-hidden group order-1 lg:order-2">
                     <img 
-                        src="https://images.unsplash.com/photo-1565610261709-54316d96a798?w=800&auto=format&fit=crop&q=80" 
+                        src= {technicalSparesImg}
                         alt="Technical Spares" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -170,7 +173,7 @@ const Services = () => {
                     <div className="sticky top-24">
                         <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
                             <img 
-                                src="https://images.unsplash.com/photo-1621261978485-850655731739?w=800&auto=format&fit=crop&q=80" 
+                                src={technicalServicesImg}
                                 alt="Technical Services" 
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
@@ -201,11 +204,6 @@ const Services = () => {
                                     </div>
                                 </motion.div>
                             ))}
-                        </div>
-                        <div className="mt-8 p-6 bg-marine-700/10 rounded-xl border border-marine-700/30">
-                            <p className="text-marine-900 font-semibold italic text-center">
-                                "Don't see what you need? We handle custom fabrication and ad-hoc repairs upon request."
-                            </p>
                         </div>
                     </div>
                </div>

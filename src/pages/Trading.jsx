@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container, Truck, Globe, Ship, Anchor } from 'lucide-react';
 import tradeHeaderImg from '../assets/trading_header_image.jpg';
+import tradingLogisticsImg from '../assets/trading_logistics.jpg';
 
 const Trading = () => {
   return (
@@ -53,7 +54,7 @@ const Trading = () => {
           >
             <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gold-500/20 rounded-3xl -z-10 transform translate-x-8 -translate-y-8"></div>
             <img 
-              src="https://images.unsplash.com/photo-1577908399584-683d79230f4a?w=800&auto=format&fit=crop&q=60" 
+              src={tradingLogisticsImg} 
               alt="Port Logistics" 
               className="rounded-3xl shadow-2xl border-4 border-white z-10 relative"
             />
