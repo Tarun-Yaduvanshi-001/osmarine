@@ -35,8 +35,8 @@ const Navbar = () => {
           : "bg-white/90 backdrop-blur-sm py-2"
       }`}
     >
-      <div className="max-w-7xl flex justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+      <div className="flex justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center w-full">
           {/* Logo Section */}
           <div>
             <Link to="/" className="flex items-center space-x-3 group">
@@ -59,7 +59,7 @@ const Navbar = () => {
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden lg:flex space-x-1  ">
+          <div className="hidden lg:flex space-x-1 ml-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden ml-auto">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-marine-900 hover:text-gold-500 transition"
@@ -100,9 +100,9 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white fixed top-[80px] left-0 w-full overflow-hidden shadow-xl"
+            className="lg:hidden bg-white fixed top-20 left-0 w-full overflow-hidden shadow-xl"
           >
-            <div className="px-4 pt-4 pb-12 space-y-4 flex flex-col items-center justify-center h-full">
+            <div className="px-4 pt-4 pb-12 space-y-4 flex flex-col items-center h-full">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
