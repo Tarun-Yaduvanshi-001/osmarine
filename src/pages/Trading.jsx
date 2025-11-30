@@ -1,60 +1,86 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Container, Truck, Globe } from 'lucide-react';
+import { Container, Truck, Globe, Ship, Anchor } from 'lucide-react';
+import tradeHeaderImg from '../assets/trading_header_image.jpg';
 
 const Trading = () => {
   return (
-    <div className="pt-20 min-h-screen bg-sand-100">
-      <div className="bg-marine-900 text-white py-16 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h1 className="text-4xl font-bold text-gold-500 mb-4">Global Trading</h1>
-            <p className="text-xl text-marine-300">Export. Import. Supply.</p>
+    <div className="min-h-screen bg-sand-100">
+      {/* Header with Image Background */}
+      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+              <img 
+                  src={tradeHeaderImg}
+                  alt="Trading Header" 
+                  className="w-full h-full object-cover"
+              />
+              <div className="header-overlay"></div>
           </div>
-          <div className="md:w-1/2 flex justify-center">
-            <Globe size={120} className="text-marine-700 opacity-50" />
+          <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tight">Global Trading</h1>
+              <p className="text-xl md:text-2xl text-gold-300 font-light">Export. Import. Seamless Supply Chain.</p>
           </div>
-        </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 py-24">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            className="space-y-6"
+            viewport={{ once: true }}
+            className="space-y-8"
           >
-            <h2 className="text-3xl font-bold text-marine-900">Seamless Logistics</h2>
-            <p className="text-gray-700 text-lg">
-              Our trading division specializes in the procurement and movement of marine equipment across borders. We handle the complexities of customs, freight forwarding, and last-mile delivery to the port.
+            <div>
+                <h3 className="text-gold-500 font-bold uppercase tracking-widest mb-2">Logistics Solutions</h3>
+                <h2 className="text-4xl font-extrabold text-marine-900 mb-6">Connecting Oceans & Ports</h2>
+            </div>
+            <p className="text-marine-900/80 text-lg leading-relaxed">
+              Our trading division specializes in the procurement and movement of critical marine equipment and spares across borders. We navigate the complexities of international customs, freight forwarding, and last-mile delivery to ensure your vessel receives what it needs, when it needs it.
             </p>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4 bg-white p-4 rounded shadow">
-                <Container className="text-gold-500" />
-                <span className="font-semibold">Bulk & Container Shipping</span>
-              </li>
-              <li className="flex items-center gap-4 bg-white p-4 rounded shadow">
-                <Truck className="text-gold-500" />
-                <span className="font-semibold">Port-to-Deck Delivery</span>
-              </li>
-            </ul>
+            
+            <div className="grid gap-4">
+              <TradingFeature icon={<Container />} title="Bulk & Container Shipping" desc="Efficient handling of large volume orders." />
+              <TradingFeature icon={<Truck />} title="Port-to-Deck Delivery" desc="Swift last-mile logistics directly to your vessel." />
+              <TradingFeature icon={<Globe />} title="Global Sourcing Network" desc="Procuring hard-to-find spares from around the world." />
+            </div>
           </motion.div>
           
           <motion.div 
              initial={{ x: 50, opacity: 0 }}
              whileInView={{ x: 0, opacity: 1 }}
-             className="bg-marine-700 p-1 rounded-lg"
+             viewport={{ once: true }}
+             className="relative"
           >
+            <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gold-500/20 rounded-3xl -z-10 transform translate-x-8 -translate-y-8"></div>
             <img 
-              src="https://images.unsplash.com/photo-1494412574643-35d324698428?auto=format&fit=crop&q=80&w=800" 
-              alt="Container Ship" 
-              className="rounded shadow-xl"
+              src="https://images.unsplash.com/photo-1577908399584-683d79230f4a?w=800&auto=format&fit=crop&q=60" 
+              alt="Port Logistics" 
+              className="rounded-3xl shadow-2xl border-4 border-white z-10 relative"
             />
+             <div className="absolute -bottom-10 -left-10 bg-marine-900 p-6 rounded-2xl shadow-xl text-white flex items-center gap-4 z-20 animate-float">
+                <Anchor size={40} className="text-gold-500" />
+                <div>
+                    <h4 className="font-bold text-xl">Reliable Partner</h4>
+                    <p className="text-sm text-marine-300">Trusted by major fleets.</p>
+                </div>
+            </div>
           </motion.div>
         </div>
       </div>
     </div>
   );
 };
+
+const TradingFeature = ({ icon, title, desc }) => (
+  <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-md border-l-4 border-gold-500 transition-all hover:shadow-lg hover:translate-x-2">
+    <div className="text-marine-700 bg-marine-300/20 p-3 rounded-full shrink-0">
+      {React.cloneElement(icon, { size: 24 })}
+    </div>
+    <div>
+      <h4 className="font-bold text-xl text-marine-900 mb-1">{title}</h4>
+      <p className="text-marine-900/70">{desc}</p>
+    </div>
+  </div>
+);
 
 export default Trading;

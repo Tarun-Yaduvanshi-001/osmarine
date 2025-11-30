@@ -1,68 +1,127 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Anchor, Globe, Package } from 'lucide-react';
+import { Anchor, Globe, Package, Wrench, Ship, LifeBuoy, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroVideo from '../assets/hero-ship-video.mp4';
+import heroVideo from '../assets/hero_video.mp4';
+import service1Img from '../assets/technical_spares_supply.jpg';
+import service2Img from '../assets/stores_supply.jpg';
+import service3Img from '../assets/machinery_overhaul.jpg';
+import service4Img from '../assets/ship_repair.jpg';
+import service5Img from '../assets/lsa_ffa_inspection.jpg';
 
 const Home = () => {
+  
+  const featuredServices = [
+    { title: "Technical Spares Supply", icon: <Settings />, img: service1Img },
+    { title: "Stores Supply", icon: <ShoppingCart />, img: service2Img },
+    { title: "Machinery Overhaul", icon: <Wrench />, img: service3Img },
+    { title: "Ship Repair", icon: <Ship />, img: service4Img },
+    { title: "LSA/FFA Inspection", icon: <LifeBuoy />, img: service5Img },
+  ];
+
+  // Need ShoppingCart icon imported for the array above
   return (
     <div className="w-full overflow-hidden">
       
       {/* HERO SECTION */}
       <section className="relative h-screen w-full">
         <video 
-          autoPlay 
-          loop 
-          muted 
+          autoPlay loop muted playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
-          <source src={heroVideo} type="video/mp4" />
+          {/* Pexels free marine video placeholder */}
+          <source src={heroVideo} />
         </video>
         
-        {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-marine-900/90 to-marine-700/40"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-marine-900/80 via-marine-900/60 to-marine-700/40 mix-blend-multiply"></div>
 
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          <motion.h1 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg"
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
+          <motion.div
+             initial={{ opacity: 0, scale: 0.9 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 1 }}
+             className="mb-6"
           >
-            ORACLE STAR <br /> <span className="text-marine-300 text-3xl md:text-5xl">MARINE AND TRADING LLC</span>
-          </motion.h1>
+              <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-2 drop-shadow-2xl uppercase tracking-tight">
+                Oracle Star
+              </h1>
+              <h2 className="text-xl md:text-3xl font-bold text-gold-500 uppercase tracking-widest">
+                Marine Services and Trading LLC
+              </h2>
+          </motion.div>
           
           <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-lg md:text-xl text-sand-100 max-w-2xl mb-8"
+            className="text-lg md:text-2xl text-sand-100 max-w-3xl mb-10 font-light leading-relaxed"
           >
-            Your Global Partner in Marine Supply, Technical Services, and Logistics.
+            Your trusted global partner for premier marine supplies, technical expertise, and swift logistics solutions.
           </motion.p>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex gap-4"
+            className="flex flex-col sm:flex-row gap-4"
           >
-            <Link to="/contact" className="px-8 py-3 bg-gold-500 text-marine-900 font-bold rounded hover:bg-white transition duration-300">
-              Contact Us
-            </Link>
-            <Link to="/services" className="px-8 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-marine-900 transition duration-300">
+            <Link to="/services" className="px-8 py-4 bg-gold-500 text-white font-bold uppercase tracking-wider rounded-sm hover:bg-marine-700 transition duration-300 shadow-lg">
               Explore Services
+            </Link>
+             <Link to="/contact" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider rounded-sm hover:bg-white hover:text-marine-900 transition duration-300">
+              Contact Us
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* INTRODUCTION */}
+      {/* NEW FEATURED SERVICES SECTION */}
+      <section className="py-24 bg-white relative z-20 -mt-20 rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+                <h3 className="text-gold-500 font-bold uppercase tracking-widest mb-2">What We Do</h3>
+                <h2 className="text-4xl font-extrabold text-marine-900">Featured Capabilities</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                {featuredServices.map((service, idx) => (
+                    <motion.div 
+                        key={idx}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                        viewport={{ once: true }}
+                        className="group relative h-80 rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                    >
+                        <div className="absolute inset-0">
+                            <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-marine-900 via-marine-900/60 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="absolute inset-0 p-6 flex flex-col justify-end items-start z-10">
+                            <div className="bg-gold-500 p-3 rounded-full text-white mb-4 group-hover:bg-marine-700 transition-colors">
+                                {service.icon}
+                            </div>
+                            <h3 className="text-xl font-bold text-white leading-tight group-hover:text-gold-300 transition-colors">
+                                {service.title}
+                            </h3>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+             <div className="text-center mt-12">
+                <Link to="/services" className="inline-flex items-center gap-2 text-marine-700 font-bold uppercase tracking-wider hover:text-gold-500 transition">
+                    View All Services <Wrench size={18} />
+                </Link>
+            </div>
+        </div>
+      </section>
+
+      {/* BRIEF INTRO */}
       <section className="py-20 bg-sand-100">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-marine-900 mb-6">Navigating Excellence</h2>
-          <p className="text-marine-700 max-w-3xl mx-auto mb-12 text-lg">
-            Oracle Star Marine is dedicated to providing top-tier marine stores, spare parts, and technical solutions globally. With our headquarters in Dubai and branches worldwide, we ensure your vessels keep sailing smoothly.
+          <p className="text-marine-900/80 max-w-3xl mx-auto mb-12 text-lg leading-relaxed">
+            Oracle Star Marine is dedicated to providing top-tier marine stores, spare parts, and technical solutions globally. With our headquarters in Dubai and branches worldwide, we ensure your vessels keep sailing smoothly with minimal downtime.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -76,7 +135,7 @@ const Home = () => {
                 whileHover={{ y: -10 }}
                 className="bg-white p-8 rounded-lg shadow-xl border-b-4 border-gold-500"
               >
-                <div className="text-marine-900 mb-4 flex justify-center">{item.icon}</div>
+                <div className="text-marine-700 mb-4 flex justify-center">{item.icon}</div>
                 <h3 className="text-xl font-bold text-marine-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
@@ -84,39 +143,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* MAP PREVIEW */}
-      <section className="py-20 bg-marine-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 relative z-10">
-          <div className="flex-1">
-            <h2 className="text-3xl font-bold text-gold-500 mb-6">Global Presence</h2>
-            <p className="mb-6 text-marine-300">
-              Operating strategically from 5 key maritime hubs. We are where your ship is.
-            </p>
-            <ul className="space-y-2 mb-8">
-              <li className="flex items-center gap-2"><ArrowRight size={16} className="text-gold-500"/> Dubai (HQ)</li>
-              <li className="flex items-center gap-2"><ArrowRight size={16} className="text-gold-500"/> Singapore</li>
-              <li className="flex items-center gap-2"><ArrowRight size={16} className="text-gold-500"/> Turkey</li>
-              <li className="flex items-center gap-2"><ArrowRight size={16} className="text-gold-500"/> Egypt</li>
-              <li className="flex items-center gap-2"><ArrowRight size={16} className="text-gold-500"/> India</li>
-            </ul>
-            <Link to="/contact" className="text-gold-500 hover:text-white underline">View on Map &rarr;</Link>
-          </div>
-          <div className="flex-1 h-64 w-full bg-marine-700/30 rounded-lg flex items-center justify-center border border-marine-300/30">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28888.243542245!2d55.132!3d25.078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA0JzQ4LjAiTiA1NcKwMDgnMDguMCJF!5e0!3m2!1sen!2sae!4v1625000000000!5m2!1sen!2sae" 
-              width="100%" 
-              height="100%" 
-              style={{border:0}} 
-              allowFullScreen="" 
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
+
+// Temporary import needed for the array
+import { ShoppingCart } from 'lucide-react';
 
 export default Home;

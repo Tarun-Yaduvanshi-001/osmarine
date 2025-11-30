@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-marine-900: #285260;
-  --color-marine-700: #548C92;
-  --color-marine-300: #B4D7D8;
-  --color-sand-100: #E0D7CF;
-  --color-gold-500: #AB9072;
+  --color-marine-900: #285260; /* Deep Blue */
+  --color-marine-700: #548C92; /* Teal/Turquoise (Matches logo ring) */
+  --color-marine-500: #7ABABD; /* Lighter Teal */
+  --color-marine-300: #B4D7D8; /* Very Light Teal */
+  --color-sand-100: #E0D7CF;  /* Off-white background */
+  --color-gold-700: #8C7355;  /* Darker Bronze */
+  --color-gold-500: #AB9072;  /* Bronze/Gold (Matches logo anchor) */
+  --color-gold-300: #C7B299;  /* Lighter Bronze */
   
   --font-sans: 'Inter', system-ui, sans-serif;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Custom Scrollbar */
@@ -15,15 +25,22 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-marine-900);
+  background: var(--color-sand-100);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gold-500);
+  background: var(--color-marine-700);
   border-radius: 4px;
+  border: 2px solid var(--color-sand-100);
 }
 
 body {
   background-color: var(--color-sand-100);
   color: var(--color-marine-900);
   overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Utility class for header backgrounds with overlays */
+.header-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-marine-900/90 to-marine-700/70 mix-blend-multiply;
 }
