@@ -4,23 +4,24 @@ import { motion } from 'framer-motion';
 
 const FloatingWhatsApp = () => {
   // Replace with actual number
-  const phoneNumber = "+919001308571"; 
+  const phoneNumber = "+919967078632"; 
   
   return (
     <motion.a
       href={`https://wa.me/${phoneNumber}`}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20b858] transition-colors"
       whileHover={{ scale: 1.1 }}
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-lg cursor-pointer flex items-center justify-center text-white"
+      animate={{ 
+        boxShadow: ["0 0 0 0 rgba(37, 211, 102, 0.7)", "0 0 0 20px rgba(37, 211, 102, 0)"] 
+      }}
+      transition={{ 
+        duration: 1, 
+        repeat: Infinity 
+      }}
     >
-      <MessageCircle size={32} fill="white" />
-      <span className="absolute -top-1 -right-1 flex h-3 w-3">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-      </span>
+      <MessageCircle size={28} fill="white" />
     </motion.a>
   );
 };

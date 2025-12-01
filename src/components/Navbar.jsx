@@ -31,8 +31,8 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-2"
-          : "bg-white/90 backdrop-blur-sm py-2"
+          ? "bg-[#edf9fe]/95 backdrop-blur-md shadow-lg py-2"
+          : "bg-[#edf9fe]/90 backdrop-blur-sm py-2 "
       }`}
     >
       <div className="flex justify-between px-4 sm:px-6 lg:px-8">
@@ -48,11 +48,11 @@ const Navbar = () => {
               />
             </div>
             <div className="hidden md:block flex flex-col">
-              <span className="text-3xl font-extrabold tracking-wider text-gold-500 uppercase leading-none font-sans">
+              <span className="text-3xl font-extrabold tracking-wider text-[#9a6734] uppercase leading-none font-sans">
                 Oracle Star
               </span>
               <span className="text-lg font-semibold m-4 tracking-widest text-marine-700 uppercase">
-                Marine Services and Trading LLC
+                <b>Marine Services and Trading LLC</b>
               </span>
             </div>
           </Link>
@@ -73,8 +73,8 @@ const Navbar = () => {
                 {link.name}
                 {location.pathname === link.path && (
                   <motion.div
-                    layoutId="underline"
-                    className="absolute left-0 bottom-0 h-[3px] w-full bg-gold-500"
+                    layoutId="underline "
+                    className="absolute left-0 bottom-0 h-[3px] w-full bg-gold-500 "
                   />
                 )}
               </Link>
@@ -98,17 +98,18 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white fixed top-20 left-0 w-full overflow-hidden shadow-xl"
+            className="lg:hidden bg-white fixed top-20 left-0 w-full overflow-hidden shadow-xl border-t-8 border-b-8"
           >
-            <div className="px-4 pt-4 pb-12 space-y-4 flex flex-col items-center h-full">
+            <div className="px-4 pt-4 pb-12 space-y-2 flex flex-col items-center h-full">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-6 py-3 text-xl font-bold uppercase tracking-wider text-marine-900 hover:text-gold-500 transition-colors"
+                  className="block px-6 py-3 text-2xl font-bold uppercase tracking-wider text-marine-900 hover:text-gold-500 transition-colors underline decoration-3 decoration-marine-500"
+                  
                 >
                   {link.name}
                 </Link>

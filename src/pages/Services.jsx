@@ -168,9 +168,9 @@ const Services = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
             >
-               <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {} <div className="grid lg:grid-cols-2 gap-12 items-start">
                     {/* Master Image for Services */}
-                    <div className="sticky top-24">
+                    <div className="lg:sticky lg:top-24">
                         <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
                             <img 
                                 src={technicalServicesImg}
