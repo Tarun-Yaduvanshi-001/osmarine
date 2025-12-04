@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-sand-100">
       {/* Header with Image Background */}
-      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-[60vh] pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
               <img 
                   src={aboutHeaderImg} 
@@ -28,8 +28,8 @@ const About = () => {
         {/* Background Section with Image Split */}
         <motion.section 
            initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
+   animate={{ opacity: 1 }}
+   transition={{ duration: 1 }}
            className="grid md:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 rounded-2xl shadow-xl"
         >
           <div>

@@ -6,9 +6,9 @@ import tradingLogisticsImg from '../assets/trading_logistics.jpg';
 
 const Trading = () => {
   return (
-    <div className="min-h-screen bg-sand-100">
+    <div className="min-h-screen bg-sand-100 ">
       {/* Header with Image Background */}
-      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-[60vh] pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center">
           <div className="absolute inset-0">
               <img 
                   src={tradeHeaderImg}
@@ -23,12 +23,10 @@ const Trading = () => {
           </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-24">
+      <div className="max-w-7xl mx-auto px-4 py-24 overflow-x-hidden">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div 
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
             className="space-y-8"
           >
             <div>
@@ -47,9 +45,7 @@ const Trading = () => {
           </motion.div>
           
           <motion.div 
-             initial={{ x: 50, opacity: 0 }}
-             whileInView={{ x: 0, opacity: 1 }}
-             viewport={{ once: true }}
+             initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
              className="relative"
           >
             <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gold-500/20 rounded-3xl -z-10 transform translate-x-8 -translate-y-8"></div>

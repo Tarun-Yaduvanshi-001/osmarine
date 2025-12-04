@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-// IMPORTANT: Ensure you have saved your logo image at this path
 import logoImg from "../assets/osmarine_logo.png";
+import logoName from "../assets/osmarine_logo_name.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,19 +47,28 @@ const Navbar = () => {
                 className="h-full w-full object-contain drop-shadow-sm"
               />
             </div>
-            <div className="hidden md:block flex flex-col">
-              <span className="text-3xl font-extrabold tracking-wider text-[#9a6734] uppercase leading-none font-sans">
-                Oracle Star
-              </span>
-              <span className="text-lg font-semibold m-4 tracking-widest text-marine-700 uppercase">
+            <div className="hidden  md:block flex flex-col">
+              <img
+              src={logoName}
+              alt="Oracle Star Marine Name"
+              className="h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+              />
+              <span className="md:text-md xl:text-lg font-semibold tracking-widest text-marine-700 uppercase">
                 <b>Marine Services and Trading LLC</b>
               </span>
+
+              {/* <span className=" md:text-2xl xl:text-3xl font-extrabold tracking-wider text-[#9a6734] uppercase leading-none font-sans">
+                Oracle Star
+              </span>
+              <span className="md:text-md xl:text-lg font-semibold m-4 tracking-widest text-marine-700 uppercase">
+                <b>Marine Services and Trading LLC</b>
+              </span> */}
             </div>
           </Link>
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden lg:flex space-x-1 ml-auto">
+          <div className="hidden lg:flex xl:space-x-1 ml-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
