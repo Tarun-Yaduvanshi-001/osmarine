@@ -11,6 +11,7 @@
   --color-gold-300: #C7B299;  /* Lighter Bronze */
   
   --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: "Times New Roman", Times, serif;
   --animate-float: float 6s ease-in-out infinite;
 }
 

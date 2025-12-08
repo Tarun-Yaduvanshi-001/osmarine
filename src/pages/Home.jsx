@@ -19,7 +19,6 @@ const Home = () => {
     { title: "LSA/FFA Inspection", icon: <LifeBuoy />, img: service5Img },
   ];
 
-  // Need ShoppingCart icon imported for the array above
   return (
     <div className="w-full overflow-hidden">
       
@@ -29,11 +28,10 @@ const Home = () => {
           autoPlay loop muted playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
-          {/* Pexels free marine video placeholder */}
           <source src={heroVideo} />
         </video>
         
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-marine-900/80 via-marine-900/60 to-marine-700/40 mix-blend-multiply"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-marine-900/80 via-marine-900/60 to-marine-700/40 mix-blend-multiply"></div>
 
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
           <motion.div
@@ -42,10 +40,10 @@ const Home = () => {
              transition={{ duration: 1 }}
              className="mb-6"
           >
-              <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-2 drop-shadow-2xl uppercase tracking-tight">
+              <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-2 drop-shadow-2xl uppercase tracking-tight font-serif">
                 Oracle Star
               </h1>
-              <h2 className="text-xl md:text-3xl font-bold text-gold-500 uppercase tracking-widest">
+              <h2 className="text-xl md:text-3xl font-bold text-gold-500 uppercase tracking-widest font-serif">
                 Marine Services and Trading LLC
               </h2>
           </motion.div>
@@ -54,7 +52,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-lg md:text-2xl text-sand-100 max-w-3xl mb-10 font-light leading-relaxed"
+            className="text-lg md:text-2xl text-sand-100 max-w-3xl mb-10 font-light leading-relaxed font-serif"
           >
             Your trusted global partner for premier marine supplies, technical expertise, and swift logistics solutions.
           </motion.p>
@@ -147,7 +145,6 @@ const Home = () => {
   );
 };
 
-// Temporary import needed for the array
 import { ShoppingCart } from 'lucide-react';
 
 export default Home;

@@ -11,8 +11,6 @@ const Contact = () => {
     e.preventDefault();
     setStatus('sending');
 
-    // NOTE: You must sign up at emailjs.com to get these IDs
-    // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', 'YOUR_PUBLIC_KEY' with actual values
     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
       .then((result) => {
           console.log(result.text);
@@ -39,8 +37,8 @@ const Contact = () => {
               <div className="header-overlay"></div>
           </div>
           <div className="relative z-10 text-center text-white px-4 max-w-4xl">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tight">Get In Touch</h1>
-              <p className="text-xl md:text-2xl text-gold-300 font-light">We are available 24/7 for your vessel requirements.</p>
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tight font-serif">Get In Touch</h1>
+              <p className="text-xl md:text-2xl text-gold-300 font-light font-serif">We are available 24/7 for your vessel requirements.</p>
           </div>
       </div>
 

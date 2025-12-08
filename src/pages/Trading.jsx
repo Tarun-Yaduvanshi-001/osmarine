@@ -18,8 +18,8 @@ const Trading = () => {
               <div className="header-overlay"></div>
           </div>
           <div className="relative z-10 text-center text-white px-4 max-w-4xl">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tight">Global Trading</h1>
-              <p className="text-xl md:text-2xl text-gold-300 font-light">Export. Import. Seamless Supply Chain.</p>
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tight font-serif">Global Trading</h1>
+              <p className="text-xl md:text-2xl text-gold-300 font-light font-serif">Export. Import. Seamless Supply Chain.</p>
           </div>
       </div>
 
