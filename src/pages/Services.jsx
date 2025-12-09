@@ -17,7 +17,7 @@ const Services = () => {
       { id: 'A.3', name: "Electrical Stores", icon: <Zap /> },
       { id: 'A.4', name: "Cabin Stores", icon: <Box /> },
       { id: 'A.5', name: "Provision Stores", icon: <ShoppingCart /> },
-      { id: 'A.6', name: "Safety Stores", icon: <LifeBuoyIcon /> },
+      { id: 'A.6', name: "Safety Stores", icon: <CheckCircle2 /> },
     ],
     spares: [
       { id: 'B.1', name: "Main Engine Spares", icon: <Ship /> },
@@ -230,27 +230,5 @@ const ListItem = ({ icon, text }) => (
   </motion.div>
 );
 
-// Icon Helper
-const LifeBuoyIcon = (props) => (
-    <svg 
-      {...props}
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10"/>
-      <circle cx="12" cy="12" r="4"/>
-      <line x1="4.93" x2="9.17" y1="4.93" y2="9.17"/>
-      <line x1="14.83" x2="19.07" y1="14.83" y2="19.07"/>
-      <line x1="14.83" x2="19.07" y1="9.17" y2="4.93"/>
-      <line x1="14.83" x2="9.17" y1="19.07" y2="14.83"/>
-    </svg>
-);
 
 export default Services;

@@ -36,10 +36,10 @@ const About = () => {
             <h3 className="text-gold-500 font-bold uppercase tracking-widest mb-2">Our Story</h3>
             <h2 className="text-3xl font-bold text-marine-900 mb-6">Driving Maritime Efficiency</h2>
             <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-                Oracle Star Marine and Trading LLC was established to bridge the gap between quality marine supplies and efficient logistics. With years of experience in the maritime industry, we understand the critical nature of vessel operations. 
+                Oracle Star Marine Services & Trading LLC is a trusted partner in the global maritime industry, delivering premium-quality marine stores, technical spares, and specialized engineering services to vessels worldwide with a strong focus on reliability, efficiency, and customer satisfaction.
             </p>
             <p className="text-gray-700 leading-relaxed text-lg">
-                Our team is comprised of marine engineers and logistics experts dedicated to serving vessels with speed and precision, ensuring you receive the right parts, at the right time, anywhere in the world.
+                Driven by a commitment to quality and operational excellence, Oracle Star ensures that every vessel receives the right products and expert services on time, every time-keeping your operations smooth, efficient, and seaworthy.
             </p>
           </div>
           <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg">
@@ -60,7 +60,12 @@ const About = () => {
           >
             <Compass size={60} className="text-marine-300 opacity-20 absolute top-4 right-4" />
             <h3 className="text-2xl font-bold mb-4 text-gold-300 flex items-center gap-3"><Target /> Our Vision</h3>
-            <p className="text-lg leading-relaxed opacity-90">To be the world's most trusted partner in marine supply and technical services, recognized for our integrity, innovation, and operational excellence.</p>
+            <ul className="text-lg leading-relaxed list-disc list-inside">
+              <li>Expand our global footprint with advanced logistics and superior service delivery.</li>
+              <li>Continuously upgrade our technical capabilities to meet evolving marine industry demands.</li>
+              <li>Inspire confidence by being recognized as the most trusted and efficient marine partner worldwide.</li>
+            </ul>
+            
           </motion.div>
           <motion.div 
              whileHover={{ translateY: -10 }}
@@ -68,7 +73,11 @@ const About = () => {
           >
             <Compass size={60} className="text-gold-500 opacity-10 absolute top-4 right-4" />
             <h3 className="text-2xl font-bold mb-4 text-gold-500 flex items-center gap-3"><Compass /> Our Mission</h3>
-            <p className="text-lg leading-relaxed">To deliver high-quality spares, stores, and services 24/7, ensuring our clients' vessels experience zero downtime due to supply chain delays.</p>
+            <ul className="text-lg leading-relaxed opacity-90 list-disc list-inside">
+              <li>Provide high-quality marine products and services with guaranteed performance and reliability.</li>
+              <li>Deliver timely support to vessels globally with a customer-first approach.</li>
+              <li>Build long-term partnerships through transparency, trust, and operational excellence.</li>
+            </ul>
           </motion.div>
         </div>
 

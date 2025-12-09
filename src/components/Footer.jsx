@@ -31,8 +31,8 @@ const Footer = () => {
           <h4 className="text-lg font-semibold text-gold-500 mb-4">Contact</h4>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2"><MapPin size={16} /> Dubai, UAE (Head Office)</li>
-            <li className="flex items-center gap-2"><Phone size={16} /> +971 50 123 4567</li>
-            <li className="flex items-center gap-2"><Mail size={16} /> info@oraclestar.com</li>
+            <li className="flex items-center gap-2"><Phone size={16} /> +971 507865241</li>
+            <li className="flex items-center gap-2"><Mail size={16} /> info@osmarine.ae</li>
           </ul>
         </div>
 
@@ -40,9 +40,9 @@ const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold text-gold-500 mb-4">Follow Us</h4>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-marine-300"><Linkedin /></a>
-            <a href="#" className="hover:text-marine-300"><Facebook /></a>
-            <a href="#" className="hover:text-marine-300"><Instagram /></a>
+            <a href="https://www.linkedin.com/in/oracle-star-marine-services-and-trading-llc-5025113a0/" className="hover:text-marine-300" target="_blank"><Linkedin /></a>
+            <a href="#" className="hover:text-marine-300" target="_blank"><Facebook /></a>
+            <a href="https://www.instagram.com/oracle_star_marine/" className="hover:text-marine-300" target="_blank"><Instagram /></a>
           </div>
         </div>
       </div>

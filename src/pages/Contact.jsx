@@ -12,13 +12,11 @@ const Contact = () => {
     setStatus('sending');
 
     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-      .then((result) => {
-          console.log(result.text);
+      .then(() => {
           setStatus('success');
           form.current.reset();
           setTimeout(() => setStatus(''), 5000);
-      }, (error) => {
-          console.log(error.text);
+      }, () => {
           setStatus('error');
       });
   };
@@ -64,11 +62,11 @@ const Contact = () => {
                  <MapPin size={150} />
              </div>
              <h3 className="font-bold text-2xl mb-6 text-gold-500">Head Office</h3>
-             <p className="text-marine-300 mb-2 text-lg">123 Maritime Tower, Jumeirah Lake Towers</p>
+             {/* <p className="text-marine-300 mb-2 text-lg">123 Maritime Tower, Jumeirah Lake Towers</p> */}
              <p className="text-marine-300 mb-8 text-lg">Dubai, United Arab Emirates</p>
              <div className="space-y-4">
-                <p className="font-bold flex items-center gap-4 text-lg"><Phone size={20} className="text-gold-500"/> +971 50 123 4567</p>
-                <p className="font-bold flex items-center gap-4 text-lg"><Mail size={20} className="text-gold-500"/> info@oraclestar.com</p>
+                <p className="font-bold flex items-center gap-4 text-lg"><Phone size={20} className="text-gold-500"/> +971 507865241</p>
+                <p className="font-bold flex items-center gap-4 text-lg"><Mail size={20} className="text-gold-500"/> info@osmarine.ae</p>
                 <p className="font-bold flex items-center gap-4 text-lg"><Clock size={20} className="text-gold-500"/> 24/7 Support available</p>
              </div>
           </div>
@@ -81,11 +79,11 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                 <label className="block text-sm font-bold text-marine-900 uppercase tracking-wider mb-2">Your Name</label>
-                <input type="text" name="user_name" required className="w-full p-4 border-2 border-sand-100 rounded-xl focus:outline-none focus:border-marine-700 bg-sand-100/30 transition-colors" placeholder="John Doe" />
+                <input type="text" name="user_name" required className="w-full p-4 border-2 border-sand-100 rounded-xl focus:outline-none focus:border-marine-700 bg-sand-100/30 transition-colors" placeholder="Ex -Sheikh Hussain" />
                 </div>
                 <div>
                 <label className="block text-sm font-bold text-marine-900 uppercase tracking-wider mb-2">Email Address</label>
-                <input type="email" name="user_email" required className="w-full p-4 border-2 border-sand-100 rounded-xl focus:outline-none focus:border-marine-700 bg-sand-100/30 transition-colors" placeholder="john@example.com" />
+                <input type="email" name="user_email" required className="w-full p-4 border-2 border-sand-100 rounded-xl focus:outline-none focus:border-marine-700 bg-sand-100/30 transition-colors" placeholder="username@domain.com" />
                 </div>
             </div>
             <div>
