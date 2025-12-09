@@ -57,12 +57,6 @@ const Navbar = () => {
                 <b>Marine Services and Trading LLC</b>
               </span>
 
-              {/* <span className=" md:text-2xl xl:text-3xl font-extrabold tracking-wider text-[#9a6734] uppercase leading-none font-sans">
-                Oracle Star
-              </span>
-              <span className="md:text-md xl:text-lg font-semibold m-4 tracking-widest text-marine-700 uppercase">
-                <b>Marine Services and Trading LLC</b>
-              </span> */}
             </div>
           </Link>
           </div>

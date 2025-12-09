@@ -30,7 +30,7 @@ const Preloader = () => {
         />
       </div>
       
-      <p className="mt-4 text-marine-300 font-serif tracking-widest text-sm animate-pulse">
+      <p className="mt-4 text-marine-300 font-serif tracking-widest text-md animate-pulse">
         PREPARING VESSEL...
       </p>
     </motion.div>

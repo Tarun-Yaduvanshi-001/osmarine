@@ -1,6 +1,8 @@
 import React from 'react';
 import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logoImg from "../assets/osmarine_logo.png";
+
 
 const Footer = () => {
   return (
@@ -9,8 +11,11 @@ const Footer = () => {
         
         {/* Brand */}
         <div>
-          <h3 className="text-2xl font-bold text-marine-300 mb-4">Oracle Star</h3>
-          <p className="text-sm opacity-80 leading-relaxed">
+          <span className='flex items-center'>
+            <img src={logoImg} alt="logo" className='h-25'/>
+            <h3 className="text-2xl font-bold text-marine-300 mb-4">Oracle Star</h3>
+          </span>
+          <p className="text-sm opacity-80 leading-relaxed ms-3">
             Leading Marine Service & Trading provider. Delivering excellence across oceans with premium stores, spares, and technical services.
           </p>
         </div>
@@ -48,7 +53,7 @@ const Footer = () => {
       </div>
       
       <div className="text-center border-t border-marine-700 pt-6 text-sm opacity-60">
-        &copy; {new Date().getFullYear()} Oracle Star Marine and Trading LLC. All rights reserved.
+        &copy; {new Date().getFullYear()} Oracle Star Marine Services and Trading LLC. All rights reserved.
       </div>
     </footer>
   );

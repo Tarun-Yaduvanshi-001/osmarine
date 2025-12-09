@@ -73,7 +73,7 @@ const Contact = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-white p-10 rounded-3xl shadow-2xl border-t-8 border-gold-500">
+        <div className="bg-white px-10 py-5 rounded-3xl shadow-2xl border-t-8 border-gold-500">
           <h2 className="text-3xl font-extrabold text-marine-900 mb-8">Send a Message</h2>
           <form ref={form} onSubmit={sendEmail} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
