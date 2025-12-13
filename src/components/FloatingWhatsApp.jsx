@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FloatingWhatsApp = () => {
-  const phoneNumber = "+971 507865241"; 
+  const phoneNumber = "+919967078632"; 
   
   return (
     <motion.a

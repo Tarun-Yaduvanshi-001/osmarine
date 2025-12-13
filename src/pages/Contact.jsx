@@ -41,7 +41,7 @@ const Contact = () => {
               <p className="text-xl md:text-2xl text-gold-300 font-light font-serif">We are available 24/7 for your vessel requirements.</p>
           </div>
           <a href={brochurePDF} download="OS Marine Brochure" target="_blank">
-            <button className="bg-marine-900 h-22 w-22 md:h-27 md:w-27 text-[12px] md:text-sm border-5 border-white font-bold rounded-full right-1 bottom-1  mt-5 hover:scale-110 opacity-100 hover:opacity-100 md:right-5 absolute text-gold-300 md:bottom-5 animate-bounce "><Anchor className="m-auto"></Anchor>Download Brochure</button>
+            <button className="bg-marine-900 h-21 w-21 md:h-27 md:w-27 text-[12px] md:text-sm border-5 border-white font-bold rounded-full right-1 bottom-1  mt-5 hover:scale-110 opacity-100 hover:opacity-100 md:right-5 absolute text-gold-300 md:bottom-5 animate-bounce z-10"><Anchor className="m-auto"></Anchor>Download Brochure</button>
           </a>
       </div>
 
