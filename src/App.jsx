@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import Preloader from './components/Preloader'; // Import the new component
+import Preloader from './components/Preloader';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -20,6 +20,10 @@ import servicesHeaderImg from './assets/services_header_image.jpg';
 import contactHeaderImg from './assets/contact_header_image.jpg';
 import tradingHeaderImg from './assets/trading_header_image.jpg';
 import aboutHeaderImg from './assets/about_header_image.jpg';
+
+import osmarineLogoImg from './assets/osmarine_logo.png';
+import osmarineLogoNameImg from './assets/osmarine_logo_name.png';
+import footerRingImg from '/osmarine_logo_ring.png';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,6 +44,9 @@ function App() {
         contactHeaderImg,
         tradingHeaderImg,
         aboutHeaderImg,
+        footerRingImg,
+        osmarineLogoImg,
+        osmarineLogoNameImg
       ].map((src) => {
         return new Promise((resolve, reject) => {
           const img = new Image();

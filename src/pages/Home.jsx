@@ -9,6 +9,7 @@ import service3Img from '../assets/machinery_overhaul.jpg';
 import service4Img from '../assets/ship_repair.jpg';
 import service5Img from '../assets/lsa_ffa_inspection.jpg';
 
+
 const Home = () => {
   
   const featuredServices = [
@@ -63,10 +64,10 @@ const Home = () => {
             transition={{ delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Link to="/services" className="px-8 py-4 bg-gold-500 text-white font-bold uppercase tracking-wider rounded-sm hover:bg-marine-700 transition duration-300 shadow-lg">
+            <Link to="/services" className="px-8 py-4 bg-gold-500 border-2 border-white text-white font-bold uppercase tracking-wider rounded-4xl hover:bg-marine-700 transition duration-300 shadow-lg">
               Explore Services
             </Link>
-             <Link to="/contact" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider rounded-sm hover:bg-white hover:text-marine-900 transition duration-300">
+             <Link to="/contact" className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-4xl font-bold uppercase tracking-wider hover:bg-white hover:text-marine-900 focus:bg-white transition duration-300">
               Contact Us
             </Link>
           </motion.div>

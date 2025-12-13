@@ -1,7 +1,6 @@
 import React from 'react';
 import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoImg from "../assets/osmarine_logo.png";
 
 
 const Footer = () => {
@@ -12,10 +11,13 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <span className='flex items-center'>
-            <img src={logoImg} alt="logo" className='h-25'/>
-            <h3 className="text-2xl font-bold text-marine-300 mb-4">Oracle Star</h3>
+            <img src="osmarine_logo_ring.png" alt="logo" className='h-20'/>
+            <div>
+              <h3 className="text-3xl font-bold text-gold-500 ms-3">Oracle Star</h3>
+            <h6 className="text-sm font-medium text-marine-300 ms-3">Marine Services & Trading LLC</h6>
+            </div>
           </span>
-          <p className="text-sm opacity-80 leading-relaxed ms-3">
+          <p className="text-md opacity-80 leading-relaxed">
             Leading Marine Service & Trading provider. Delivering excellence across oceans with premium stores, spares, and technical services.
           </p>
         </div>

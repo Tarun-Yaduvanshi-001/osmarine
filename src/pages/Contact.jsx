@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Clock,Anchor } from 'lucide-react';
 import contactHeaderImg from '../assets/contact_header_image.jpg';
+import brochurePDF from '../assets/OS_Marine_Brochure.pdf';
+
 
 const Contact = () => {
   const form = useRef();
@@ -11,7 +13,7 @@ const Contact = () => {
     e.preventDefault();
     setStatus('sending');
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm('service_orlpvlq', 'template_p8adn8b', form.current, 'WAUDDLBmX2sO3GjGF')
       .then(() => {
           setStatus('success');
           form.current.reset();
@@ -38,6 +40,9 @@ const Contact = () => {
               <h1 className="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tight font-serif">Get In Touch</h1>
               <p className="text-xl md:text-2xl text-gold-300 font-light font-serif">We are available 24/7 for your vessel requirements.</p>
           </div>
+          <a href={brochurePDF} download="OS Marine Brochure" target="_blank">
+            <button className="bg-marine-900 h-22 w-22 md:h-27 md:w-27 text-[12px] md:text-sm border-5 border-white font-bold rounded-full right-1 bottom-1  mt-5 hover:scale-110 opacity-100 hover:opacity-100 md:right-5 absolute text-gold-300 md:bottom-5 animate-bounce "><Anchor className="m-auto"></Anchor>Download Brochure</button>
+          </a>
       </div>
 
 
