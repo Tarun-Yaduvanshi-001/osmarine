@@ -1,29 +1,80 @@
 // src/components/Preloader.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import loaderImg from "/osmarine_logo_ring.png";
+import logoRing from '/osmarine_logo_ring.png';
+
+const letters = "OSMARINE".split("");
+
+const container = {
+  animate: {
+    transition: {
+      staggerChildren: 0.12,
+      repeat: Infinity,
+    },
+  },
+};
+
+const letterBounce = {
+  initial: { y: 0 },
+  animate: {
+    y: [-2, -18, -2],
+    transition: {
+      duration: 0.9,
+      ease: "easeInOut",
+      repeat: Infinity,
+    },
+  },
+};
 
 const Preloader = () => {
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-marine-900 text-white"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-b from-marine-950 via-marine-900 to-marine-950 text-white"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+      exit={{ opacity: 0, transition: { duration: 0.8 } }}
     >
-      <img src={loaderImg} alt="" className="h-25 animate-bounce" />
+      <img src={logoRing} alt="" className="h-25 mb-5 animate-bounce" />
+      {/* Bouncing Letters */}
+      <motion.div
+        className="flex items-end space-x-1 text-4xl font-serif tracking-widest text-gold-500"
+        variants={container}
+        animate="animate"
+      >
+        {letters.map((char, index) => (
+          <motion.span
+            key={index}
+            variants={letterBounce}
+            className="inline-block"
+          >
+            {char}
+          </motion.span>
+        ))}
+      </motion.div>
 
-      <div className="w-64 h-1 bg-marine-700 rounded-full overflow-hidden">
+      {/* Line */}
+      <div className="mt-2 w-56 h-[3px] bg-marine-600 rounded-full relative overflow-hidden">
         <motion.div
-          className="h-full bg-gold-500"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-500 to-transparent"
+          animate={{ x: ["-100%", "100%"] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
-      <p className="mt-4 text-marine-300 font-serif tracking-widest text-md animate-pulse">
+      {/* Subtitle */}
+      <motion.p
+        className="mt-6 text-lg font-bold tracking-[0.3em] text-marine-300"
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
         LOADING...
-      </p>
+      </motion.p>
+
+      {/* Ocean Glow */}
+      <motion.div
+        className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-marine-800/40 to-transparent"
+        animate={{ opacity: [0.3, 0.6, 0.3] }}
+        transition={{ repeat: Infinity, duration: 3 }}
+      />
     </motion.div>
   );
 };
