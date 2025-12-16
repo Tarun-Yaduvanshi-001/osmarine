@@ -1,18 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Container, Truck, Globe, Ship, Anchor } from 'lucide-react';
-import tradeHeaderImg from '../assets/trading_header_image.jpg';
+import tradeHeaderImg from '../assets/trading_header_image.webp';
 import tradingLogisticsImg from '../assets/trading_logistics.jpg';
+
+import SEO from '../components/SEO';
 
 const Trading = () => {
   return (
     <div className="min-h-screen bg-sand-100 ">
+
+      <SEO 
+        title="Global Trading & Logistics" 
+        description="Expert marine procurement and global logistics solutions. We handle customs, freight forwarding, and last-mile delivery for ship spares worldwide."
+        keywords="marine logistics, ship spares procurement, global trading, customs clearance, freight forwarding, port delivery"
+        url="/trading"
+      />
+
       {/* Header with Image Background */}
       <div className="relative min-h-[60vh] pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center">
           <div className="absolute inset-0">
               <img 
                   src={tradeHeaderImg}
-                  alt="Trading Header" 
+                  alt="International marine trading and global logistics operations" 
                   className="w-full h-full object-cover"
               />
               <div className="header-overlay"></div>
@@ -51,7 +61,7 @@ const Trading = () => {
             <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gold-500/20 rounded-3xl -z-10 transform translate-x-8 -translate-y-8"></div>
             <img 
               src={tradingLogisticsImg} 
-              alt="Port Logistics" 
+              alt="Global ship spares logistics and freight forwarding container" 
               className="rounded-3xl shadow-2xl border-4 border-white z-10 relative"
             />
              <div className="absolute -bottom-10 -left-10 bg-marine-900 p-6 rounded-2xl shadow-xl text-white flex items-center gap-4 z-20 animate-float">

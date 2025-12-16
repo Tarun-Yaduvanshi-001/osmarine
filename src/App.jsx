@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -7,25 +7,25 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Preloader from './components/Preloader';
+import NotFound from './pages/NotFound'
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Trading from './pages/Trading';
-import Contact from './pages/Contact';
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Trading = lazy(() => import('./pages/Trading'));
+const Contact = lazy(() => import('./pages/Contact'));
 
-// Import assets to preload directly to ensure paths are correct
 //headr images
 import heroVideo from './assets/hero_video.mp4';
-import servicesHeaderImg from './assets/services_header_image.jpg';
-import contactHeaderImg from './assets/contact_header_image.jpg';
-import tradingHeaderImg from './assets/trading_header_image.jpg';
-import aboutHeaderImg from './assets/about_header_image.jpg';
+import servicesHeaderImg from './assets/services_header_image.webp';
+import contactHeaderImg from './assets/contact_header_image.webp';
+import tradingHeaderImg from './assets/trading_header_image.webp';
+import aboutHeaderImg from './assets/about_header_image.webp';
 
 //logos and footer ring
-import osmarineLogoImg from './assets/osmarine_logo.png';
+import osmarineLogoImg from './assets/osmarine_logo.webp';
 import osmarineLogoNameImg from './assets/osmarine_logo_name.png';
-import footerRingImg from '/osmarine_logo_ring.png';
+import footerRingImg from '/osmarine_logo_ring.webp';
 
 //page images
 import aboutImg from './assets/about.jpg';
@@ -116,16 +116,19 @@ function App() {
       {!isLoading && (
         <Router>
           <ScrollToTop />
-          <div className="flex flex-col min-h-screen">
+          <div className={`flex flex-col min-h-screen ${isLoading ? 'h-screen overflow-hidden' : ''}`}>
             <Navbar />
             <main className="flex-grow">
+              <Suspense fallback={<div className="h-screen bg-sand-100"></div>}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/trading" element={<Trading />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
+              </Suspense>
             </main>
             <FloatingWhatsApp />
             <Footer />

@@ -1,7 +1,7 @@
 // src/components/Preloader.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import logoRing from '/osmarine_logo_ring.png';
+import logoRing from '/osmarine_logo_ring.webp';
 
 const letters = "OSMARINE".split("");
 
@@ -31,7 +31,7 @@ const Preloader = () => {
     <motion.div
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-b from-marine-950 via-marine-900 to-marine-950 text-white"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.8 } }}
+      exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
     >
       <img src={logoRing} alt="" className="h-25 mb-5 animate-bounce" />
       {/* Bouncing Letters */}

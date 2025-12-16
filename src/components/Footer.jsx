@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <span className='flex items-center'>
-            <img src="osmarine_logo_ring.png" alt="logo" className='h-20'/>
+            <img src="/osmarine_logo_ring.webp" height="100" alt="Oracle Star Marine Services official logo ring" className='h-20'/>
             <div>
               <h3 className="text-3xl font-bold text-gold-500 ms-3">Oracle Star</h3>
             <h6 className="text-sm font-medium text-marine-300 ms-3">Marine Services & Trading LLC</h6>

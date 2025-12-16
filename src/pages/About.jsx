@@ -1,19 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Target, Compass, Anchor } from "lucide-react";
-import aboutHeaderImg from "../assets/about_header_image.jpg";
+import aboutHeaderImg from "../assets/about_header_image.webp";
 import aboutImg from "../assets/about.jpg";
 import brochurePDF from '../assets/OS_Marine_Brochure.pdf';
+
+import SEO from '../components/SEO';
 
 const About = () => {
   return (
     <div className="min-h-screen bg-sand-100">
+
+      <SEO 
+        title="About Us" 
+        description="Learn about Oracle Star Marine's journey, vision, and mission. We are committed to quality and reliability in the global maritime industry."
+        url="/about"
+      />
+
       {/* Header with Image Background */}
       <div className="relative min-h-[60vh] pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={aboutHeaderImg}
-            alt="About Us Header"
+            alt="Oracle Star Marine Services team and company overview"
             className="w-full h-full object-cover"
           />
           <div className="header-overlay"></div>
@@ -41,9 +50,9 @@ const About = () => {
           className="grid md:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 rounded-2xl shadow-xl"
         >
           <div>
-            <h3 className="text-gold-500 font-bold uppercase tracking-widest mb-2">
+            <span className="text-gold-500 font-bold uppercase tracking-widest mb-2">
               Our Story
-            </h3>
+            </span>
             <h2 className="text-3xl font-bold text-marine-900 mb-6">
               Driving Maritime Efficiency
             </h2>
@@ -64,7 +73,7 @@ const About = () => {
           <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg">
             <img
               src={aboutImg}
-              alt="Marine Engineers"
+              alt="Marine engineers inspecting vessel machinery and systems"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-marine-900/20"></div>

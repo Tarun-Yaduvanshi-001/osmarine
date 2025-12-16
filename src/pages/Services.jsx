@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, m } from 'framer-motion';
 import { Wrench, ShoppingCart, Settings, Anchor, Zap, Box, Droplet, PenTool, Ship, CheckCircle2 } from 'lucide-react';
-import servicesHeaderImg from '../assets/services_header_image.jpg';
+import servicesHeaderImg from '../assets/services_header_image.webp';
 import marineStoresImg from '../assets/marine_stores.jpg';
 import technicalSparesImg from '../assets/technical_spares.jpg';
 import technicalServicesImg from '../assets/technical_services.jpg';
+
+import SEO from '../components/SEO';
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('sales');
@@ -44,12 +46,19 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-sand-100">
       
+      <SEO 
+        title="Our Services" 
+        description="Comprehensive marine solutions including Engine Stores, Deck Stores, Technical Spares, and Machinery Overhaul services."
+        keywords="engine overhaul, marine stores, ship provision, hydraulic repairs"
+        url="/services"
+      />
+
       {/* Header with Image Background */}
       <div className="relative pt-32 pb-28 lg:pt-40 lg:pb-36 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
               <img 
                   src= {servicesHeaderImg}
-                  alt="Services Header" 
+                  alt="Marine technical services and ship spares supply in Dubai" 
                   className="w-full h-full object-cover"
               />
               <div className="header-overlay"></div>
@@ -97,7 +106,7 @@ const Services = () => {
                 <div className="relative h-[300px] lg:h-[500px] rounded-2xl overflow-hidden group">
                     <img 
                         src={marineStoresImg} 
-                        alt="Marine Stores" 
+                        alt="Marine deck and engine stores provisions supply" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-marine-900/30 group-hover:bg-marine-900/10 transition-colors"></div>
@@ -146,7 +155,7 @@ const Services = () => {
                 <div className="relative h-[300px] lg:h-[500px] rounded-2xl overflow-hidden group order-1 lg:order-2">
                     <img 
                         src= {technicalSparesImg}
-                        alt="Technical Spares" 
+                        alt="Genuine OEM marine engine spare parts and components" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-marine-900/30 group-hover:bg-marine-900/10 transition-colors"></div>
@@ -174,7 +183,7 @@ const Services = () => {
                         <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
                             <img 
                                 src={technicalServicesImg}
-                                alt="Technical Services" 
+                                alt="Expert marine technical repairs and overhaul services" 
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                              <div className="absolute inset-0 bg-gradient-to-t from-marine-900/90 via-transparent to-transparent"></div>

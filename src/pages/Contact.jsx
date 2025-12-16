@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { MapPin, Phone, Mail, Send, Clock,Anchor } from 'lucide-react';
-import contactHeaderImg from '../assets/contact_header_image.jpg';
+import contactHeaderImg from '../assets/contact_header_image.webp';
 import brochurePDF from '../assets/OS_Marine_Brochure.pdf';
+
+import SEO from '../components/SEO';
 
 
 const Contact = () => {
@@ -25,13 +27,20 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-sand-100">
+
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Oracle Star Marine. Headquartered in Dubai with branches in Singapore, India, Egypt, and Turkey. Available 24/7 for vessel support."
+        keywords="contact oracle star marine, marine services dubai contact, ship supplier email, marine support 24/7, dubai maritime companies"
+        url="/contact"
+      />
       
        {/* Header with Image Background */}
        <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
               <img 
                   src={contactHeaderImg}
-                  alt="Contact Header" 
+                  alt="Contact Oracle Star Marine 24/7 support team" 
                   className="w-full h-full object-cover"
               />
               <div className="header-overlay"></div>

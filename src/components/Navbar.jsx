@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImg from "../assets/osmarine_logo.png";
+import logoImg from "../assets/osmarine_logo.webp";
 import logoName from "../assets/osmarine_logo_name.png";
 
 const Navbar = () => {
@@ -43,14 +43,16 @@ const Navbar = () => {
             <div className="relative h-16 w-16 md:h-20 md:w-20 transition-transform duration-300 group-hover:scale-105">
               <img
                 src={logoImg}
-                alt="Oracle Star Marine Logo"
+                alt="Oracle Star Marine Services logo"
+                width="125"
+                height="125"
                 className="h-full w-full object-contain drop-shadow-sm"
               />
             </div>
             <div className="hidden  md:block flex flex-col">
               <img
               src={logoName}
-              alt="Oracle Star Marine Name"
+              alt="Oracle Star Marine Services brand name"
               className="h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
               />
               <span className="md:text-md xl:text-lg font-semibold tracking-widest text-marine-700 uppercase">
