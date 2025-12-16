@@ -40,7 +40,7 @@ const Trading = () => {
             className="space-y-8"
           >
             <div>
-                <h3 className="text-gold-500 font-bold uppercase tracking-widest mb-2">Logistics Solutions</h3>
+                <span className="text-gold-500 font-bold uppercase tracking-widest mb-2">Logistics Solutions</span>
                 <h2 className="text-4xl font-extrabold text-marine-900 mb-6">Connecting Oceans & Ports</h2>
             </div>
             <p className="text-marine-900/80 text-lg leading-relaxed">

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroVideo from "../assets/hero_video.mp4";
+import heroPoster from "../assets/hero_poster.webp";
 import service1Img from "../assets/technical_spares_supply.jpg";
 import service2Img from "../assets/stores_supply.jpg";
 import service3Img from "../assets/machinery_overhaul.jpg";
@@ -114,6 +115,7 @@ const Home = () => {
           muted
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
+          poster={heroPoster}
         >
           <source src={heroVideo} />
         </video>
@@ -127,7 +129,7 @@ const Home = () => {
             transition={{ duration: 1 }}
             className="mb-6"
           >
-            <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-2 drop-shadow-2xl uppercase tracking-tight font-serif">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-2 drop-shadow-2xl uppercase tracking-tight font-serif">
               Oracle Star
             </h1>
             <h2 className="text-xl md:text-3xl font-bold text-gold-500 uppercase tracking-widest font-serif">
@@ -171,9 +173,9 @@ const Home = () => {
       <section className="py-24 bg-white relative z-20 -mt-20 rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-gold-500 font-bold uppercase tracking-widest mb-2">
+            <span className="text-gold-500 font-bold uppercase tracking-widest mb-2">
               What We Do
-            </h3>
+            </span>
             <h2 className="text-4xl font-extrabold text-marine-900">
               Featured Capabilities
             </h2>
